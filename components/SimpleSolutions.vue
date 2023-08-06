@@ -1,34 +1,36 @@
 <template>
   <div id="SimpleSolutions">
-    <img src="../assets/images/rectangle-40.png" class="bg-simple" />
-    <div class="simple-header">
-      Simple Solutions for Complex Connections. <br />
-      We are Pushing Limits.
-    </div>
-    <div class="divider"></div>
-    <div
-      v-for="sol in solutions"
-      :key="sol.name"
-      :class="{ 'solution-green': sol.name === 'Voxxt' }"
-    >
-      <div class="columns-2 simple-row">
-        <div class="solution-name" :class="{ green: sol.name === 'Voxxt' }">
-          {{ sol.name }}
-          <div v-if="sol.name !== 'Voxxt'" class="links">
-            <img src="../assets/images/link.svg" />
-          </div>
-          <div v-else class="links">
-            <img src="../assets/images/activeLinks.svg" />
-          </div>
-        </div>
-        <div
-          class="solution-description"
-          :class="{ green: sol.name === 'Voxxt' }"
-        >
-          {{ sol.description }}
-        </div>
+    <div class="solutions">
+      <img src="../assets/images/rectangle-40.png" class="bg-simple" />
+      <div class="simple-header">
+        Simple Solutions for Complex Connections. <br />
+        We are Pushing Limits.
       </div>
-      <div v-if="sol.name !== 'Voxxt'" class="solution-divider"></div>
+      <div class="divider"></div>
+      <div
+        v-for="sol in solutions"
+        :key="sol.name"
+        :class="{ 'solution-green': sol.name === 'Voxxt' }"
+      >
+        <div class="columns-2 simple-row">
+          <div class="solution-name" :class="{ green: sol.name === 'Voxxt' }">
+            {{ sol.name }}
+            <div v-if="sol.name !== 'Voxxt'" class="links">
+              <img src="../assets/images/link.svg" />
+            </div>
+            <div v-else class="links">
+              <img src="../assets/images/activeLinks.svg" />
+            </div>
+          </div>
+          <div
+            class="solution-description"
+            :class="{ green: sol.name === 'Voxxt' }"
+          >
+            {{ sol.description }}
+          </div>
+        </div>
+        <div v-if="sol.name !== 'Voxxt'" class="solution-divider"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -66,83 +68,234 @@ const solutions = [
 <style lang="scss" scoped>
 #SimpleSolutions {
   position: relative;
+  width: 100%;
   padding: 150px 0 250px;
-  .bg-simple {
-    position: absolute;
-    left: auto;
-    right: 3%;
-    top: 25%;
-    z-index: 999;
+  @media screen and (max-width: 800px) {
+    margin: 0 auto;
+    padding: 100px 0;
+    display: flex;
+    justify-content: center;
   }
-  .simple-header {
-    padding: 0 110px 56px 24px;
-    color: #ecf9e8;
-    font-family: "Aeonik Regular";
-    font-size: 68.095px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 74.905px;
+  @media screen and (max-width: 610px) {
+    padding: 100px 15px;
   }
-  .divider {
-    height: 1px;
-    margin: 0 100px;
-    background: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
-    opacity: 0.3;
-  }
-  .solution-green {
-    background: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
-  }
-  .simple-row {
-    padding: 35px 100px;
-    .solution-name {
-      max-width: 65%;
-      min-height: 45px;
-      color: #ecf9e8;
-      font-family: "Aeonik Light";
-      font-size: 24px;
-      font-style: normal;
-      line-height: normal;
-      letter-spacing: 0.5px;
-      vertical-align: middle;
-      align-items: center;
-      display: flex;
-      &.green {
-        color: #1e3f04;
-        font-family: "Aeonik Regular";
+  .solutions {
+    width: 100%;
+    display: block;
+    .bg-simple {
+      position: absolute;
+      left: auto;
+      right: 3%;
+      top: 25%;
+      min-width: 359px;
+      z-index: 999;
+      @media screen and (max-width: 1845px) {
+        right: 2%;
       }
-      .links {
-        min-height: 30px;
-        vertical-align: middle;
-        align-items: center;
-        display: flex;
-        margin-left: 10px;
-        img {
-          max-height: 13px;
-          margin: auto 0;
+      @media screen and (max-width: 1600px) {
+        right: 1.5%;
+      }
+      @media screen and (max-width: 1300px) {
+        right: 3%;
+        max-width: 300px;
+      }
+      @media screen and (max-width: 1170px) {
+        right: 2%;
+      }
+      @media screen and (max-width: 1105px) {
+        min-width: 250px;
+      }
+      @media screen and (max-width: 990px) {
+        right: 3%;
+        min-width: 150px;
+        max-width: 250px;
+      }
+      @media screen and (max-width: 975px) {
+        right: 2%;
+      }
+      @media screen and (max-width: 950px) {
+        display: none;
+      }
+    }
+    .simple-header {
+      padding: 0 110px 56px 24px;
+      color: #ecf9e8;
+      font-family: "Aeonik Regular";
+      font-size: 68.095px;
+      font-style: normal;
+      font-weight: 400;
+      line-height: 74.905px;
+      @media screen and (max-width: 1460px) {
+        font-size: 60px;
+        line-height: 70px;
+      }
+      @media screen and (max-width: 1304px) {
+        font-size: 54px;
+        line-height: 68px;
+      }
+      @media screen and (max-width: 1189px) {
+        font-size: 50px;
+        line-height: 60px;
+      }
+      @media screen and (max-width: 1112px) {
+        font-size: 44px;
+        line-height: 58px;
+      }
+      @media screen and (max-width: 997px) {
+        font-size: 40px;
+        line-height: 50px;
+      }
+      @media screen and (max-width: 920px) {
+        font-size: 34px;
+        line-height: 48px;
+      }
+      @media screen and (max-width: 804px) {
+        font-size: 30px;
+        line-height: 40px;
+      }
+      @media screen and (max-width: 800px) {
+        padding: 0 0 26px;
+      }
+      @media screen and (max-width: 610px) {
+        br {
+          display: none;
         }
       }
     }
-    .solution-description {
-      max-width: 700px;
-      margin-left: -37%;
-      color: #ecf9e8;
-      font-family: "Aeonik Light";
-      font-size: 15px;
-      font-style: normal;
-      line-height: 22.5px;
-      letter-spacing: 0.65px;
-      &.green {
-        color: #1e3f04;
-        font-family: "Aeonik Regular";
+    .divider {
+      height: 1px;
+      margin: 0 100px;
+      background: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
+      opacity: 0.3;
+      @media screen and (max-width: 800px) {
+        margin: 0 auto;
       }
     }
-  }
-  .solution-divider {
-    display: block;
-    height: 1px;
-    margin: 0 100px;
-    background: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
-    opacity: 0.3;
+    .solution-green {
+      background: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
+      @media screen and (max-width: 800px) {
+        margin: 0 -6rem;
+      }
+      .simple-row {
+        @media screen and (max-width: 800px) {
+          padding: 30px 6rem;
+        }
+      }
+    }
+    .simple-row {
+      padding: 35px 100px;
+      @media screen and (max-width: 800px) {
+        padding: 30px 0;
+        &.columns-2 {
+          columns: 1;
+        }
+      }
+      .solution-name {
+        max-width: 65%;
+        min-height: 45px;
+        color: #ecf9e8;
+        font-family: "Aeonik Light";
+        font-size: 24px;
+        font-style: normal;
+        line-height: normal;
+        letter-spacing: 0.5px;
+        vertical-align: middle;
+        align-items: center;
+        display: flex;
+        @media screen and (max-width: 1845px) {
+          min-height: 50px;
+        }
+        @media screen and (max-width: 1760px) {
+          min-height: 55px;
+        }
+        @media screen and (max-width: 1600px) {
+          min-height: 60px;
+        }
+        @media screen and (max-width: 1500px) {
+          min-height: 65px;
+        }
+        @media screen and (max-width: 1410px) {
+          min-height: 70px;
+        }
+        @media screen and (max-width: 1150px) {
+          min-height: 75px;
+        }
+        @media screen and (max-width: 800px) {
+          margin-bottom: 23px;
+        }
+        &.green {
+          color: #1e3f04;
+          font-family: "Aeonik Regular";
+        }
+        .links {
+          min-height: 30px;
+          vertical-align: middle;
+          align-items: center;
+          display: flex;
+          margin-left: 10px;
+          img {
+            max-height: 13px;
+            margin: auto 0;
+          }
+        }
+      }
+      .solution-description {
+        max-width: 700px;
+        margin-left: -37%;
+        color: #ecf9e8;
+        font-family: "Aeonik Light";
+        font-size: 15px;
+        font-style: normal;
+        line-height: 22.5px;
+        letter-spacing: 0.65px;
+        @media screen and (max-width: 1845px) {
+          max-width: 650px;
+        }
+        @media screen and (max-width: 1760px) {
+          max-width: 600px;
+          margin-left: -47%;
+        }
+        @media screen and (max-width: 1600px) {
+          max-width: 550px;
+        }
+        @media screen and (max-width: 1500px) {
+          max-width: 500px;
+        }
+        @media screen and (max-width: 1410px) {
+          max-width: 450px;
+        }
+        @media screen and (max-width: 1365px) {
+          margin-left: -57%;
+        }
+        @media screen and (max-width: 1150px) {
+          max-width: 400px;
+        }
+        @media screen and (max-width: 940px) {
+          margin-left: -47%;
+        }
+        @media screen and (max-width: 870px) {
+          margin-left: -37%;
+        }
+        @media screen and (max-width: 800px) {
+          margin-left: 0;
+          display: block;
+        }
+        &.green {
+          color: #1e3f04;
+          font-family: "Aeonik Regular";
+        }
+      }
+    }
+    .solution-divider {
+      display: block;
+      height: 1px;
+      margin: 0 100px;
+      background: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
+      opacity: 0.3;
+      @media screen and (max-width: 800px) {
+        margin: 0 auto;
+      }
+    }
   }
 }
 </style>

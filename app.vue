@@ -48,7 +48,7 @@ body {
 #App {
   width: 100%;
   height: 100vh;
-  margin: 0;
+  margin: 0 auto;
   opacity: 1;
 }
 

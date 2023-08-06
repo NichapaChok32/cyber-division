@@ -60,8 +60,9 @@ const empowered = [
       column-gap: 75px;
       .empowered-lists {
         display: flex;
-        border-left: 1px solid #e5e1d6;
-        border-color: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
+        border-left: 1px solid;
+        border-image-slice: 1;
+        border-image-source: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
         .empower-day {
           max-width: 60px;
           max-height: 60px;

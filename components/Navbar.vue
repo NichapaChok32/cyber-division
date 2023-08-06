@@ -18,15 +18,28 @@ header {
   justify-content: space-between;
   height: 65px;
   padding: 0 100px;
+  @media screen and (max-width: 990px) {
+    width: 100%;
+    height: 100px;
+    margin: 0 auto;
+    padding: 60px 0 20px;
+    justify-content: center;
+  }
   .logo {
     max-width: 143px;
     height: auto;
     padding: 26px 0 21.5px;
+    @media screen and (max-width: 990px) {
+      display: none;
+    }
   }
   .menu {
     max-width: 44px;
     height: auto;
     padding: 30px 0 27.5px;
+    @media screen and (max-width: 990px) {
+      padding: 0;
+    }
   }
 }
 .divider {

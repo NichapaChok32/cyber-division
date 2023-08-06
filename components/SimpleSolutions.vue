@@ -70,18 +70,21 @@ const solutions = [
   position: relative;
   width: 100%;
   padding: 150px 0 250px;
-  @media screen and (max-width: 800px) {
+  @media screen and (max-width: 990px) {
     margin: 0 auto;
-    padding: 100px 0;
+    padding: 0 0 100px;
     display: flex;
     justify-content: center;
   }
   @media screen and (max-width: 610px) {
-    padding: 100px 15px;
+    padding: 0 15px 100px;
   }
   .solutions {
-    width: 100%;
-    display: block;
+    @media screen and (max-width: 990px) {
+      width: 100%;
+      display: block;
+      max-width: 380px;
+    }
     .bg-simple {
       position: absolute;
       left: auto;
@@ -106,14 +109,6 @@ const solutions = [
         min-width: 250px;
       }
       @media screen and (max-width: 990px) {
-        right: 3%;
-        min-width: 150px;
-        max-width: 250px;
-      }
-      @media screen and (max-width: 975px) {
-        right: 2%;
-      }
-      @media screen and (max-width: 950px) {
         display: none;
       }
     }
@@ -141,19 +136,9 @@ const solutions = [
         font-size: 44px;
         line-height: 58px;
       }
-      @media screen and (max-width: 997px) {
-        font-size: 40px;
-        line-height: 50px;
-      }
-      @media screen and (max-width: 920px) {
-        font-size: 34px;
-        line-height: 48px;
-      }
-      @media screen and (max-width: 804px) {
+      @media screen and (max-width: 990px) {
         font-size: 30px;
         line-height: 40px;
-      }
-      @media screen and (max-width: 800px) {
         padding: 0 0 26px;
       }
       @media screen and (max-width: 610px) {
@@ -167,24 +152,24 @@ const solutions = [
       margin: 0 100px;
       background: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
       opacity: 0.3;
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 990px) {
         margin: 0 auto;
       }
     }
     .solution-green {
       background: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
-      @media screen and (max-width: 800px) {
-        margin: 0 -6rem;
+      @media screen and (max-width: 990px) {
+        margin: 0 -19rem;
       }
       .simple-row {
-        @media screen and (max-width: 800px) {
-          padding: 30px 6rem;
+        @media screen and (max-width: 990px) {
+          padding: 30px 19rem;
         }
       }
     }
     .simple-row {
       padding: 35px 100px;
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 990px) {
         padding: 30px 0;
         &.columns-2 {
           columns: 1;
@@ -220,7 +205,7 @@ const solutions = [
         @media screen and (max-width: 1150px) {
           min-height: 75px;
         }
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 990px) {
           margin-bottom: 23px;
         }
         &.green {
@@ -270,13 +255,7 @@ const solutions = [
         @media screen and (max-width: 1150px) {
           max-width: 400px;
         }
-        @media screen and (max-width: 940px) {
-          margin-left: -47%;
-        }
-        @media screen and (max-width: 870px) {
-          margin-left: -37%;
-        }
-        @media screen and (max-width: 800px) {
+        @media screen and (max-width: 990px) {
           margin-left: 0;
           display: block;
         }
@@ -292,7 +271,7 @@ const solutions = [
       margin: 0 100px;
       background: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
       opacity: 0.3;
-      @media screen and (max-width: 800px) {
+      @media screen and (max-width: 990px) {
         margin: 0 auto;
       }
     }

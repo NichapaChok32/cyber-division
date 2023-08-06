@@ -13,6 +13,7 @@
             </ul>
           </div>
         </span>
+        <img src="../assets/images/main.svg" class="banner banner-mobile" />
         <p class="main-paragraph">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quam quam
           arcu nunc, orci eu bibendum. Sed morbi pellentesque elit purus quam a
@@ -37,7 +38,10 @@
         </div>
         <div class="last-divider"></div>
       </div>
-      <img src="../assets/images/main.svg" class="main-banner-col banner" />
+      <img
+        src="../assets/images/main.svg"
+        class="main-banner-col banner banner-desktop"
+      />
     </div>
     <div class="green-light">
       <img src="../assets/images/big-green-light.svg" class="big-green" />
@@ -105,10 +109,20 @@ $item-count: 4;
 }
 #MainBanner {
   position: relative;
+  width: 100%;
   padding: 91.5px 100px 48.5px;
+  @media screen and (max-width: 990px) {
+    margin: 0 auto;
+    padding: 30px 0 100px;
+    display: flex;
+    justify-content: center;
+  }
   .green-light {
     display: flex;
     opacity: 0.5;
+    @media screen and (max-width: 500px) {
+      display: none;
+    }
     .big-green {
       min-width: 347px;
       position: absolute;
@@ -131,6 +145,10 @@ $item-count: 4;
   .main-banner-row {
     display: flex;
     justify-content: space-between;
+    @media screen and (max-width: 990px) {
+      display: block;
+      margin: 0 auto;
+    }
     .main-banner-col {
       width: fit-content;
       &.main-header {
@@ -142,6 +160,28 @@ $item-count: 4;
         font-style: normal;
         line-height: 83.2px;
         z-index: 2;
+        @media screen and (max-width: 1544px) {
+          font-size: 54px;
+          line-height: 73px;
+        }
+        @media screen and (max-width: 1315px) {
+          font-size: 44px;
+          line-height: 63px;
+        }
+        @media screen and (max-width: 1185px) {
+          font-size: 40px;
+          line-height: 60px;
+        }
+        @media screen and (max-width: 1134px) {
+          max-width: 480px;
+        }
+        @media screen and (max-width: 1040px) {
+          max-width: 420px;
+        }
+        @media screen and (max-width: 990px) {
+          max-width: 380px;
+          padding: 0;
+        }
         .scroller {
           position: relative;
           display: inline-flex;
@@ -167,8 +207,24 @@ $item-count: 4;
                 font-size: 64px;
                 font-style: normal;
                 line-height: normal;
+                @media screen and (max-width: 1544px) {
+                  font-size: 54px;
+                }
+                @media screen and (max-width: 1315px) {
+                  font-size: 44px;
+                }
+                @media screen and (max-width: 1185px) {
+                  font-size: 40px;
+                }
               }
             }
+          }
+        }
+        .banner-mobile {
+          display: none;
+          @media screen and (max-width: 990px) {
+            display: block;
+            margin-bottom: 38px;
           }
         }
         .main-paragraph {
@@ -180,6 +236,19 @@ $item-count: 4;
           font-style: normal;
           line-height: 24px;
           letter-spacing: 0.25px;
+          @media screen and (max-width: 1134px) {
+            max-width: 480px;
+          }
+          @media screen and (max-width: 1040px) {
+            max-width: 420px;
+          }
+          @media screen and (max-width: 990px) {
+            max-width: 380px;
+            margin-top: 0;
+          }
+          @media screen and (max-width: 500px) {
+            display: none;
+          }
         }
         .get-start {
           width: 152px;
@@ -202,6 +271,9 @@ $item-count: 4;
             text-align: center;
             padding: 12px 0;
           }
+          @media screen and (max-width: 500px) {
+            display: none;
+          }
         }
         .our-client {
           margin-top: 156px;
@@ -211,6 +283,9 @@ $item-count: 4;
           font-style: normal;
           line-height: 22.5px;
           text-decoration-line: underline;
+          @media screen and (max-width: 990px) {
+            margin-top: 38px;
+          }
         }
         .our-client-row {
           display: flex;
@@ -224,11 +299,39 @@ $item-count: 4;
           margin-top: 48.5px;
           background: linear-gradient(90deg, #e3ffe6 0%, #e5e1d6 100%);
           opacity: 0.3;
+          @media screen and (max-width: 500px) {
+            margin-top: 10px;
+          }
         }
       }
-      .banner {
+      &.banner {
         max-width: 557px;
         max-height: 719.234px;
+        @media screen and (max-width: 1600px) {
+          max-width: 500px;
+          max-height: 700px;
+        }
+        @media screen and (max-width: 1544px) {
+          max-width: 450px;
+          max-height: 690px;
+        }
+        @media screen and (max-width: 1494px) {
+          max-width: 400px;
+          max-height: 610px;
+        }
+        @media screen and (max-width: 1134px) {
+          max-width: 350px;
+          max-height: 590px;
+        }
+        &.banner-desktop {
+          display: block;
+          @media screen and (max-width: 990px) {
+            display: none;
+          }
+        }
+        &.banner-mobile {
+          display: none;
+        }
       }
     }
   }
@@ -244,6 +347,16 @@ $item-count: 4;
   height: 20px;
   position: absolute;
   background: url("../assets/images/underline.svg") no-repeat bottom;
+}
+@media screen and (max-width: 1544px) {
+  .scroller::after {
+    bottom: 10px;
+  }
+}
+@media screen and (max-width: 1315px) {
+  .scroller::after {
+    bottom: 15px;
+  }
 }
 .scroller > .scrolling-words-box::before {
   top: 0;

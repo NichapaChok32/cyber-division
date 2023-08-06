@@ -29,6 +29,13 @@ body {
   overflow-x: hidden;
 }
 
+@media screen and (max-width: 990px) {
+  body {
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
 .bg {
   position: fixed;
   top: -50%;

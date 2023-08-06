@@ -39,6 +39,10 @@
       </div>
       <img src="../assets/images/main.svg" class="main-banner-col banner" />
     </div>
+    <div class="green-light">
+      <img src="../assets/images/big-green-light.svg" class="big-green" />
+      <img src="../assets/images/small-green-light.svg" class="small-green" />
+    </div>
   </div>
 </template>
 
@@ -55,8 +59,75 @@ $item-count: 4;
     }
   }
 }
+@keyframes run {
+  0% {
+    right: 0;
+    bottom: 0;
+  }
+  25% {
+    right: 40%;
+    bottom: 20%;
+  }
+  50% {
+    bottom: 40%;
+    right: 60%;
+  }
+  75% {
+    right: 60%;
+    bottom: 20%;
+  }
+  100% {
+    right: 60%;
+    bottom: 0;
+  }
+}
+@keyframes run2 {
+  0% {
+    top: 0;
+    left: 10%;
+  }
+  25% {
+    top: 20%;
+    left: 40%;
+  }
+  50% {
+    top: 40%;
+    left: 60%;
+  }
+  75% {
+    top: 20%;
+    left: 60%;
+  }
+  100% {
+    top: 0;
+    left: 60%;
+  }
+}
 #MainBanner {
+  position: relative;
   padding: 91.5px 100px 48.5px;
+  .green-light {
+    display: flex;
+    opacity: 0.5;
+    .big-green {
+      min-width: 347px;
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      animation: run 10s linear infinite;
+      fill: #e5e1d6;
+      filter: blur(25px);
+    }
+    .small-green {
+      min-width: 247px;
+      position: absolute;
+      top: 0;
+      left: 10%;
+      animation: run2 10s linear infinite;
+      fill: #e5e1d6;
+      filter: blur(25px);
+    }
+  }
   .main-banner-row {
     display: flex;
     justify-content: space-between;
@@ -70,6 +141,7 @@ $item-count: 4;
         font-size: 64px;
         font-style: normal;
         line-height: 83.2px;
+        z-index: 2;
         .scroller {
           position: relative;
           display: inline-flex;
@@ -181,7 +253,6 @@ $item-count: 4;
   content: "";
   height: 10px;
   position: absolute;
-  background: linear-gradient(180deg, #021b04, rgba(255, 142, 113, 0));
 }
 .scroller > .scrolling-words-box::after {
   left: 0;
@@ -191,6 +262,5 @@ $item-count: 4;
   content: "";
   height: 30px;
   position: absolute;
-  background: linear-gradient(180deg, rgba(255, 142, 113, 0), #021b04);
 }
 </style>

@@ -1,5 +1,7 @@
 <template>
-  <div class="bg"></div>
+  <div class="bg">
+    <div class="container"></div>
+  </div>
   <div id="App">
     <navbar></navbar>
     <client-only>
@@ -35,12 +37,12 @@ body {
   bottom: -50%;
   width: 200%;
   height: 200vh;
-  background: transparent
-    url("http://assets.iceable.com/img/noise-transparent.png") repeat 0 0;
+  background: transparent url("./assets/images/noise.gif") repeat 0 0;
   background-repeat: repeat;
   animation: bg-animation 0.2s infinite;
   opacity: 0.9;
   visibility: visible;
+  mix-blend-mode: screen;
 }
 
 #App {
